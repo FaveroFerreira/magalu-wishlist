@@ -12,17 +12,21 @@ Este sistema é responsável por manter Clientes e suas Listas de Desejos.
 
 ##Tecnicalidades:
 
-Por simplicidade optei por desenvolver o projeto usando com o padrão "Layered Architecture".
+1. Por simplicidade optei por desenvolver o projeto usando com o padrão "Layered Architecture".
 
 ``
     Controller --> Service --> Repository
 ``
 
-O projeto está configurado para utilizar autenticação e autorização (InMemory/Basic),
+2. O projeto está configurado para utilizar autenticação e autorização (InMemory/Basic),
 porém, seguindo o solicitado, os endpoints relacionados as funcionalidades da challenge
 irã́o permitir requests não autorizados.
 
-Não foi desenvolvidos testes para 100% das classes, foi apenas feito uma amostra de como eu faria os testes em um "ambiente real".
+3. Não foi desenvolvidos testes para 100% das classes, foi apenas feito uma amostra de como eu faria os testes em um "ambiente real".
+
+4. O projeto conta com 1 enpoint autenticado e autorizado. "/top-secret"
+    - User magalu/magalu possui permissão para acessa-lo
+    - User not-magalu/not-magalu não possui permissão para acessa-lo
 
 ##Manual de instruções
 
