@@ -1,8 +1,8 @@
-#MAGALU CHALLENGE
+# MAGALU CHALLENGE
 
 Este sistema é responsável por manter Clientes e suas Listas de Desejos.
 
-##Tech Stack
+## Tech Stack
 
  - Kotlin Lang
  - Spring (Boot, Data JPA, Validation, Security)
@@ -10,7 +10,7 @@ Este sistema é responsável por manter Clientes e suas Listas de Desejos.
  - Postgres
  - Docker
 
-##Tecnicalidades:
+## Tecnicalidades:
 
 1. Por simplicidade optei por desenvolver o projeto usando com o padrão "Layered Architecture".
 
@@ -28,7 +28,7 @@ irã́o permitir requests não autorizados.
     - User magalu/magalu possui permissão para acessa-lo
     - User not-magalu/not-magalu não possui permissão para acessa-lo
 
-##Manual de instruções
+## Manual de instruções
 
 O projeto está disponibilizado de maneira containerizada, é necessário ter o 
 Docker e Docker-Compose instalados no seu computador para executa-lo.
@@ -54,7 +54,7 @@ Após isso é possível acessar o Swagger do projeto pelo Link:
 
 PS: a url http://localhost:8080 também faz redirect para a URL do swagger.
 
-##Throubleshooting
+## Throubleshooting
 
 - É necessário ter as portas 8080 e 5432 disponíveis e livres no sistema para que seja possível
 executar os containers sem conflitos de porta.
