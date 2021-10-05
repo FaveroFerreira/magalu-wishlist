@@ -7,7 +7,7 @@ import java.util.*
 data class CustomerDataBuilder(
     val id: UUID = UUID.randomUUID(),
     val name: String = "Juan Junior Neto",
-    val email: String = "Juan Junior Neto",
+    val email: String = "juan.neto@email.com",
 ) {
     fun buildDTO() = CustomerDTO(name, email)
 
