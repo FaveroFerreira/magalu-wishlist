@@ -1,6 +1,7 @@
 package com.github.faveroferreira.wishlist.service
 
 import com.github.faveroferreira.wishlist.dto.ProductDTO
+import com.github.faveroferreira.wishlist.exception.ProductNotFoundException
 import com.github.faveroferreira.wishlist.http.MagaluHttpClient
 import com.github.faveroferreira.wishlist.model.Product
 import com.github.faveroferreira.wishlist.repository.ProductRepository
@@ -18,9 +19,11 @@ class ProductService(
     }
 
     private fun findProductByIdExternally(productId: UUID): Product {
-        val product = toProduct(magaluHttpClient.findProductById(productId))
+        val productDTO: ProductDTO = magaluHttpClient.findProductById(productId) ?: throw ProductNotFoundException()
 
-        return persistProduct(product)
+        return persistProduct(
+            toProduct(productDTO)
+        )
     }
 
     private fun persistProduct(product: Product): Product = productRepository.save(product)

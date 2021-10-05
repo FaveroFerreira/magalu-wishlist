@@ -3,6 +3,7 @@ package com.github.faveroferreira.wishlist.service
 import com.github.faveroferreira.wishlist.dto.CustomerDTO
 import com.github.faveroferreira.wishlist.exception.CustomerEmailAlreadyTakenException
 import com.github.faveroferreira.wishlist.exception.CustomerNotFoundException
+import com.github.faveroferreira.wishlist.exception.DuplicateWishlistProductException
 import com.github.faveroferreira.wishlist.model.Customer
 import com.github.faveroferreira.wishlist.repository.CustomerRepository
 import org.springframework.stereotype.Service
@@ -26,14 +27,16 @@ class CustomerService(
     fun deleteCustomer(customerId: UUID) = findCustomerById(customerId).let { customerRepository.delete(it) }
 
     fun updateCustomer(customerId: UUID, customerDTO: CustomerDTO): Customer {
-        val savedCustomer = findCustomerById(customerId)
+        val updatingCustomer = findCustomerById(customerId)
 
-        if (needsToUpdateEmail(savedCustomer.email, customerDTO.email) && emailIsAlreadyTaken(customerDTO.email)) {
+        if (needsToUpdateEmail(updatingCustomer.email, customerDTO.email) &&
+            newEmailBelongsToAnotherCustomer(updatingCustomer, customerDTO.email)
+        ) {
             throw CustomerEmailAlreadyTakenException()
         }
 
         return persistCustomer(
-            savedCustomer.apply { name = customerDTO.name; email = customerDTO.email }
+            updatingCustomer.apply { name = customerDTO.name; email = customerDTO.email }
         )
     }
 
@@ -48,6 +51,12 @@ class CustomerService(
     }
 
     fun findAllCustomers(): List<Customer> = customerRepository.findAll()
+
+    private fun newEmailBelongsToAnotherCustomer(updatingCustomer: Customer, email: String): Boolean {
+        val currentEmailHolder = customerRepository.findByEmail(email) ?: return false
+
+        return currentEmailHolder != updatingCustomer
+    }
 
     private fun findCustomerById(customerId: UUID): Customer =
         customerRepository.findById(customerId).orElseThrow { CustomerNotFoundException() }

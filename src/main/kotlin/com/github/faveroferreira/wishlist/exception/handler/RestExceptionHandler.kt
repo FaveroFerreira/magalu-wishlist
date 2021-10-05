@@ -3,6 +3,7 @@ package com.github.faveroferreira.wishlist.exception.handler
 import com.github.faveroferreira.wishlist.dto.ErrorDetailsDTO
 import com.github.faveroferreira.wishlist.exception.CustomerEmailAlreadyTakenException
 import com.github.faveroferreira.wishlist.exception.CustomerNotFoundException
+import com.github.faveroferreira.wishlist.exception.DuplicateWishlistProductException
 import com.github.faveroferreira.wishlist.exception.ProductNotFoundException
 import org.springframework.http.ResponseEntity
 import org.springframework.http.ResponseEntity.badRequest
@@ -25,6 +26,11 @@ class RestExceptionHandler {
     @ExceptionHandler(ProductNotFoundException::class)
     fun handleProductNotFoundException(ex: ProductNotFoundException): ResponseEntity<Any> {
         return badRequest().body(ErrorDetailsDTO("Product not found!"))
+    }
+
+    @ExceptionHandler(DuplicateWishlistProductException::class)
+    fun handleDuplicateWishlistProductException(ex: DuplicateWishlistProductException): ResponseEntity<Any> {
+        return badRequest().body(ErrorDetailsDTO("Product is already in your wishlist!"))
     }
 
 }

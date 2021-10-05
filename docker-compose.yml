@@ -1,0 +1,20 @@
+version: "3.8"
+services:
+  service:
+    container_name: magalu-challenge
+    image: faveroferreira/magalu-challenge
+    expose:
+      - 8080
+    depends_on:
+      - database
+    network_mode: host
+  database:
+    container_name: magaludb
+    image: postgres
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=magaludb
+    expose:
+      - 5432
+    network_mode: host

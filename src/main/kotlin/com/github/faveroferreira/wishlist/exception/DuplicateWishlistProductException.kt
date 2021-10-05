@@ -1,3 +1,3 @@
-package com.github.faveroferreira.wishlist.service
+package com.github.faveroferreira.wishlist.exception
 
 class DuplicateWishlistProductException : Exception()

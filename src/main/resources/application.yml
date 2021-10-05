@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/boilerplate_db
+    url: jdbc:postgresql://localhost:5432/magaludb
     username: root
     password: root
 

@@ -1,13 +1,13 @@
 CREATE TABLE customer
 (
-    id    UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    id    UUID PRIMARY KEY,
     name  VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE
 );
 
 CREATE TABLE product
 (
-    id           UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    id           UUID PRIMARY KEY,
     title        VARCHAR(100)   NOT NULL,
     brand        VARCHAR(100)   NOT NULL,
     image_url    VARCHAR(255)   NOT NULL,

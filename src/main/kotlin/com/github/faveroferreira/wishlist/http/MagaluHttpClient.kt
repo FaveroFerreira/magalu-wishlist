@@ -17,13 +17,13 @@ class MagaluHttpClient(
 
     private val log: Logger = LoggerFactory.getLogger(MagaluHttpClient::class.java)
 
-    fun findProductById(productId: UUID): ProductDTO {
-        try {
+    fun findProductById(productId: UUID): ProductDTO? {
+        return try {
             val url = "${magaluConfigProps.url}/$productId/"
-            return restTemplate.getForEntity(url, ProductDTO::class.java).body!!
+            restTemplate.getForEntity(url, ProductDTO::class.java).body!!
         } catch (e: Exception) {
             log.error("M=findProductById, message=Error finding product with id $productId", e)
-            throw ProductNotFoundException()
+            null
         }
     }
 
