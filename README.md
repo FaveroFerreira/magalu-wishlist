@@ -24,8 +24,8 @@ irã́o permitir requests não autorizados.
 
 3. O projeto possui testes unitários e testes de integração, em diferentes source folders.
     - Pode-se executar os testes de integração via gradle task **integrationTest**
-4. Por breviedade, não foi desenvolvido testes para 100% de cobertura. Apenas uma amostra de como eu faria no "mundo real".
-5. O projeto conta com 1 enpoint autenticado e autorizado. "/top-secret"
+    - Por breviedade, não foi desenvolvido testes para 100% de cobertura. Apenas uma amostra de como eu faria no "mundo real".
+4. O projeto conta com 1 enpoint autenticado e autorizado. "/top-secret"
     - User magalu/magalu possui permissão para acessa-lo
     - User not-magalu/not-magalu não possui permissão para acessa-lo
 
