@@ -15,9 +15,6 @@ class CustomerIntegrationTest : IntegrationTest() {
     @Autowired
     lateinit var mockMvc: MockMvc
 
-    val magaluProductId =
-        "http://localhost:8080/customer/58c31783-2840-445e-88d2-0b5086a5e528/product-wishlist/cd54520e-3305-c20a-842a-92f1439576d4"
-
     @Test
     fun createNewCustomer() {
         val name = "New Name"
