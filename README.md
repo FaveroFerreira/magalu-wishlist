@@ -22,6 +22,7 @@ O projeto está configurado para utilizar autenticação e autorização (InMemo
 porém, seguindo o solicitado, os endpoints relacionados as funcionalidades da challenge
 irã́o permitir requests não autorizados.
 
+Não foi desenvolvidos testes para 100% das classes, foi apenas feito uma amostra de como eu faria os testes em um "ambiente real".
 
 ##Manual de instruções
 
@@ -47,10 +48,10 @@ Após isso é possível acessar o Swagger do projeto pelo Link:
 
 [Link do Swagger](http://localhost:8080/swagger-ui.html)
 
+PS: a url http://localhost:8080 também faz redirect para a URL do swagger.
+
 ##Throubleshooting
 
 - É necessário ter as portas 8080 e 5432 disponíveis e livres no sistema para que seja possível
 executar os containers sem conflitos de porta.
-
-- É possível que
 
