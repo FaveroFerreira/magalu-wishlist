@@ -13,19 +13,11 @@ Este sistema é responsável por manter Clientes e suas Listas de Desejos.
 ## Tecnicalidades:
 
 1. Por simplicidade optei por desenvolver o projeto usando com o padrão "Layered Architecture".
-
-``
-    Controller --> Service --> Repository
-``
-
-2. O projeto está configurado para utilizar autenticação e autorização (InMemory/Basic),
-porém, seguindo o solicitado, os endpoints relacionados as funcionalidades da challenge
-irã́o permitir requests não autorizados.
-
-3. O projeto possui testes unitários e testes de integração, em diferentes source folders.
+    - Controller --> Service --> Repository
+2. O projeto possui testes unitários e testes de integração, em diferentes source folders.
     - Pode-se executar os testes de integração via gradle task **integrationTest**
     - Por breviedade, não foi desenvolvido testes para 100% de cobertura. Apenas uma amostra de como eu faria no "mundo real".
-4. O projeto conta com 1 enpoint autenticado e autorizado. "/top-secret"
+3. O projeto conta com 1 enpoint autenticado e autorizado. "/top-secret"
     - User magalu/magalu possui permissão para acessa-lo
     - User not-magalu/not-magalu não possui permissão para acessa-lo
 
