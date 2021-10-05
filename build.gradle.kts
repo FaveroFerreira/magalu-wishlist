@@ -32,6 +32,7 @@ repositories {
 
 
 val mockkVersion: String = "1.12.0"
+val swaggerVersion: String = "2.9.2"
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-validation")
@@ -42,6 +43,8 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("org.flywaydb:flyway-core")
+    implementation("io.springfox:springfox-swagger2:$swaggerVersion")
+    implementation("io.springfox:springfox-swagger-ui:$swaggerVersion")
     runtimeOnly("org.postgresql:postgresql")
 
     testImplementation("io.mockk:mockk:$mockkVersion")
