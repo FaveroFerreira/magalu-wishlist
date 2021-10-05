@@ -22,6 +22,8 @@ class SecurityConfig : WebSecurityConfigurerAdapter() {
     )
 
     private val swagger = arrayOf(
+        "/",
+        "/csrf",
         "/v2/api-docs",
         "/swagger-resources",
         "/swagger-resources/**",
