@@ -47,6 +47,12 @@ Após isso é possível acessar o Swagger do projeto pelo Link:
 
 PS: a url http://localhost:8080 também faz redirect para a URL do swagger.
 
+### Para adição de produtos:
+
+É necessário enviar um ID de produto válido da API:
+
+http://challenge-api.luizalabs.com/api/product/?page=1
+
 ## Throubleshooting
 
 - É necessário ter as portas 8080 e 5432 disponíveis e livres no sistema para que seja possível
