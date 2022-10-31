@@ -1,4 +1,4 @@
-# MAGALU CHALLENGE
+# MAGALU WISHLIST
 
 Este sistema é responsável por manter Clientes e suas Listas de Desejos.
 
